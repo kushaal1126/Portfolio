@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b12">
+    <meta name="description" content="The personal portfolio of a CSE Cybersecurity student at VIT Vellore.">
+    <title>CyberPortfolio | Aspiring Security Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="background-grid"></div>
+    <div class="ambient-glow glow-one"></div>
+    <div class="ambient-glow glow-two"></div>
+
+    <header class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-symbol">&lt;/&gt;</span>
+            <span>CYBER<span class="accent">PORTFOLIO</span></span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#learning" class="nav-link">Learning</a>
+            <a href="#writing" class="nav-link">Writing</a>
+        </nav>
+
+        <a href="#resume" class="nav-cta">View Resume <span>↗</span></a>
+
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="hero section-container" id="home">
+
+            <div class="hero-content">
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    PORTFOLIO / 2026
+                </div>
+
+                <p class="eyebrow">HELLO, WORLD. I AM KUSHAAL AKKIREDDY</p>
+
+                <h1 class="hero-title">
+                    An Aspiring<br>
+                    <span class="gradient-text">Security</span><br>
+                    Engineer<span class="accent">.</span>
+                </h1>
+
+                <p class="hero-description">
+                    A Computer Science student specializing in Cybersecurity
+                    at VIT Vellore, exploring the intersection of technology,
+                    security, and problem-solving.
+                </p>
+
+                <div class="hero-tags">
+                    <span>CSE</span>
+                    <span>CYBERSECURITY</span>
+                    <span>PYTHON</span>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#projects" class="button-primary">
+                        Explore My Work <span>↘</span>
+                    </a>
+                    <a href="#about" class="button-secondary">
+                        Discover My Journey
+                    </a>
+                </div>
+
+                <div class="hero-footer">
+                    <span class="footer-line"></span>
+                    <span>BUILDING KNOWLEDGE. DEFENDING SYSTEMS.</span>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="visual-label">
+                    <span class="status-dot"></span>
+                    SYSTEM OVERVIEW
+                </div>
+
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="terminal-title">profile.sh</span>
+                        <span class="terminal-menu">•••</span>
+                    </div>
+
+                    <div class="terminal-body">
+                        <p><span class="terminal-muted">visitor@portfolio</span>:<span class="terminal-blue">~</span>$ whoami</p>
+                        <p class="terminal-output">aspiring_security_engineer</p>
+
+                        <p><span class="terminal-muted">visitor@portfolio</span>:<span class="terminal-blue">~</span>$ education</p>
+                        <p class="terminal-output">VIT Vellore</p>
+                        <p class="terminal-output">CSE / Cybersecurity</p>
+
+                        <p><span class="terminal-muted">visitor@portfolio</span>:<span class="terminal-blue">~</span>$ interests</p>
+                        <p class="terminal-output">Cybersecurity</p>
+                        <p class="terminal-output">Python · Secure Systems</p>
+
+                        <p><span class="terminal-muted">visitor@portfolio</span>:<span class="terminal-blue">~</span>$ status</p>
+                        <p class="terminal-success">Learning & building<span class="cursor">_</span></p>
+                    </div>
+                </div>
+
+                <div class="floating-card card-top">
+                    <span class="floating-icon">⌘</span>
+                    <div>
+                        <strong>THINK</strong>
+                        <span>Analytically</span>
+                    </div>
+                </div>
+
+                <div class="floating-card card-bottom">
+                    <span class="floating-icon green-icon">⌁</span>
+                    <div>
+                        <strong>BUILD</strong>
+                        <span>Securely</span>
+                    </div>
+                </div>
+
+                <div class="visual-orbit orbit-one"></div>
+                <div class="visual-orbit orbit-two"></div>
+            </div>
+
+            <a href="#about" class="scroll-indicator">
+                <span></span> SCROLL TO EXPLORE
+            </a>
+        </section>
+
+
+        <section class="content-section section-container" id="about">
+            <p class="eyebrow">01 / ABOUT</p>
+
+            <h2>Every expert starts <span class="gradient-text">somewhere.</span></h2>
+
+            <p>
+                I'm a Computer Science and Engineering student specializing in
+                Cybersecurity at VIT Vellore. I'm currently building my foundation
+                in programming, computer systems, and security while exploring how
+                technology can be made more reliable and resilient.
+            </p>
+
+            <p>
+                What interests me about cybersecurity is understanding not just how
+                systems work, but also how they can fail, how vulnerabilities can
+                be exploited, and how thoughtful engineering can help defend against
+                those threats.
+            </p>
+
+            <p>
+                Through coursework and multidisciplinary projects, I'm developing
+                my problem-solving skills and learning to connect theoretical
+                concepts with practical applications. My current focus is
+                strengthening my programming fundamentals, exploring defensive
+                security, and developing a deeper understanding of the systems
+                I hope to secure.
+            </p>
+
+            <p>
+                This portfolio documents my academic journey so far—the projects
+                I work on, the concepts I learn, the challenges I encounter, and
+                the progress I make as I work toward becoming a cybersecurity
+                professional.
+            </p>
+        </section>
+
+
+        
+        <section class="content-section section-container" id="projects">
+            <p class="eyebrow">02 / PROJECTS</p>
+
+            <h2>From ideas to <span class="gradient-text">implementation.</span></h2>
+
+            <div class="project-card">
+                <p class="eyebrow">MULTIDISCIPLINARY IOT PROJECT</p>
+
+                <h3>ATM Jackpotting Defense System</h3>
+
+                <p>
+                    ATM jackpotting is a type of attack in which criminals attempt
+                    to force an ATM to dispense cash without an authorized
+                    transaction. This project explores a layered defensive approach
+                    to reducing the risk of unauthorized cash-dispensing commands.
+                </p>
+
+                <h4>My Role</h4>
+
+                <p>
+                    As the Threat Modeler and Security Compliance Lead, my
+                    responsibilities include researching ATM jackpotting attack
+                    scenarios, examining relevant security weaknesses, and
+                    contributing to the design of defensive controls.
+                </p>
+
+                <h4>Defensive Approach</h4>
+
+                <ul>
+                    <li>
+                        <strong>Step 1 — Application Allowlisting:</strong>
+                        Develop a Python-based simulation that checks files against
+                        approved hashes and identifies unapproved applications.
+                    </li>
+                    <li>
+                        <strong>Step 2 — Command Authorization:</strong>
+                        Explore a controlled model in which cash-dispensing commands
+                        require authorization rather than being accepted solely
+                        because they originate locally.
+                    </li>
+                    <li>
+                        <strong>Step 3 — Intrusion Detection:</strong>
+                        Explore defensive monitoring for suspicious network activity
+                        and unusual behavior.
+                    </li>
+                </ul>
+
+                <h4>Learning Objectives</h4>
+
+                <p>
+                    The project aims to demonstrate how application control,
+                    command authorization, and intrusion monitoring can work
+                    together as layers of defense. It also provides an opportunity
+                    to apply Python programming and threat-modeling concepts to
+                    an IoT security scenario.
+                </p>
+
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Cybersecurity</span>
+                    <span>IoT Security</span>
+                    <span>Threat Modeling</span>
+                    <span>Application Allowlisting</span>
+                </div>
+
+                <p class="project-note">
+                    <strong>Project status:</strong> In progress. Implementation
+                    details and results will be added as the project develops.
+                </p>
+            </div>
+        </section>
+
+        
+        <section class="content-section section-container" id="learning">
+            <p class="eyebrow">03 / LEARNING</p>
+
+            <h2>Building the <span class="gradient-text">foundations.</span></h2>
+
+            <p class="section-intro">
+                My first-year coursework at VIT Vellore is helping me build
+                a foundation in programming, mathematical reasoning, and
+                engineering science. These subjects shape how I approach
+                problems and prepare me to explore more advanced areas of
+                computer science and cybersecurity.
+            </p>
+
+            <div class="learning-grid">
+
+                <article class="learning-card">
+                    <p class="eyebrow">COURSE 01 / PROGRAMMING</p>
+
+                    <h3>Problem Solving Using Python</h3>
+
+                    <p>
+                        This course introduces me to programming as a practical
+                        problem-solving tool. I am developing the ability to
+                        translate problems into logical steps and implement
+                        solutions using Python.
+                    </p>
+
+                    <h4>Concepts and skills</h4>
+
+                    <ul>
+                        <li>Variables, data types, and expressions</li>
+                        <li>Conditional statements and loops</li>
+                        <li>Strings and common string operations</li>
+                        <li>Breaking problems into logical steps</li>
+                        <li>Writing, testing, and debugging programs</li>
+                    </ul>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Logic</span>
+                        <span>Debugging</span>
+                    </div>
+                </article>
+
+                <article class="learning-card">
+                    <p class="eyebrow">COURSE 02 / MATHEMATICS</p>
+
+                    <h3>Multivariable Calculus and Differential Equations</h3>
+
+                    <p>
+                        This course develops my mathematical reasoning and
+                        ability to analyze relationships between variables.
+                        It helps me understand the mathematical techniques
+                        used to model and solve engineering problems.
+                    </p>
+
+                    <h4>Concepts and skills</h4>
+
+                    <ul>
+                        <li>Multivariable and vector calculus</li>
+                        <li>Multiple integrals and coordinate systems</li>
+                        <li>Ordinary differential equations</li>
+                        <li>Mathematical modelling and problem-solving</li>
+                    </ul>
+
+                    <div class="project-tags">
+                        <span>Calculus</span>
+                        <span>Differential Equations</span>
+                        <span>Analysis</span>
+                    </div>
+                </article>
+
+                <article class="learning-card">
+                    <p class="eyebrow">COURSE 03 / ENGINEERING SCIENCE</p>
+
+                    <h3>Engineering in Physics</h3>
+
+                    <p>
+                        This course helps me explore the physical principles
+                        underlying engineering systems. Through quantum
+                        physics topics, I am learning to describe physical
+                        systems using mathematical models and understand
+                        how theoretical principles connect to applications.
+                    </p>
+
+                    <h4>Concepts and skills</h4>
+
+                    <ul>
+                        <li>Quantum states and Dirac notation</li>
+                        <li>Operators, eigenvalues, and eigenvectors</li>
+                        <li>Schrödinger equations and quantum systems</li>
+                        <li>Particle-in-a-box models and quantum tunnelling</li>
+                    </ul>
+
+                    <div class="project-tags">
+                        <span>Physics</span>
+                        <span>Quantum Mechanics</span>
+                        <span>Mathematical Modelling</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <p class="project-note">
+                These courses are part of my ongoing first-year learning
+                journey. I will continue updating this section as I develop
+                my understanding and apply these concepts in practical work.
+            </p>
+        </section>
+
+
+        
+        <section class="content-section section-container" id="writing">
+            <p class="eyebrow">04 / WRITING & TECHNICAL WORK</p>
+
+            <h2>Ideas, expressed <span class="gradient-text">clearly.</span></h2>
+
+            <p class="section-intro">
+                These samples represent two sides of my learning journey:
+                communicating ideas effectively and applying technical
+                knowledge to build practical solutions.
+            </p>
+
+            <div class="learning-grid">
+
+                <!-- ENGLISH ASSIGNMENT -->
+                <article class="learning-card">
+                    <p class="eyebrow">SAMPLE 01 / ENGLISH COMMUNICATION</p>
+
+                    <h3>Belbin's Team Roles: The Resource Investigator</h3>
+
+                    <p>
+                        This presentation explores the Resource Investigator
+                        role within Belbin's Team Roles framework. It explains
+                        the role through three perspectives: the extrovert,
+                        the explorer, and the networker.
+                    </p>
+
+                    <h4>Assignment overview</h4>
+
+                    <p>
+                        The aim was to understand a teamwork concept, organize
+                        relevant information, and communicate it in a clear,
+                        engaging presentation. The three perspectives provide
+                        an accessible way to explain the characteristics
+                        associated with the role.
+                    </p>
+
+                    <h4>Why this sample matters</h4>
+
+                    <p>
+                        This work demonstrates my ability to research a topic,
+                        structure information, simplify ideas for an audience,
+                        and develop my written and oral communication skills.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>English</span>
+                        <span>Research</span>
+                        <span>Communication</span>
+                        <span>Presentation Skills</span>
+                    </div>
+
+                    <p class="project-note">
+                        <strong>Sample status:</strong> Presentation completed.
+                    </p>
+
+                    <!-- Add your actual presentation link here later. -->
+                </article>
+
+                <!-- TECHNICAL ASSIGNMENT -->
+                <article class="learning-card">
+                    <p class="eyebrow">SAMPLE 02 / PYTHON PROGRAMMING</p>
+
+                    <h3>MindMetric — Quiz & Performance Analysis</h3>
+
+                    <p>
+                        MindMetric is a web-based quiz application developed
+                        using Python and Flask, with an HTML and CSS interface.
+                        It combines interactive questions with a system for
+                        evaluating and presenting a user's quiz performance.
+                    </p>
+
+                    <h4>Assignment overview</h4>
+
+                    <p>
+                        The project brings together programming logic,
+                        score calculation, answer review, and performance
+                        breakdowns. Building the application involved
+                        connecting the Python backend with the website
+                        interface and debugging issues during development.
+                    </p>
+
+                    <h4>Why this sample matters</h4>
+
+                    <p>
+                        This work demonstrates how I apply programming
+                        concepts to a functional application. It highlights
+                        my developing skills in problem-solving, web
+                        development, debugging, and integrating different
+                        parts of a software project.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>HTML & CSS</span>
+                        <span>Problem Solving</span>
+                    </div>
+
+                    <p class="project-note">
+                        <strong>Project status:</strong> Working prototype.
+                        Any IQ-style estimate is experimental and is not
+                        a scientifically validated IQ measurement.
+                    </p>
+
+                    <!-- Add your live MindMetric link or screenshots here later. -->
+                </article>
+
+            </div>
+        </section>
+
+
+        
+        
+        <section class="content-section section-container" id="resume">
+            <p class="eyebrow">05 / RESUME</p>
+
+            <h2>The person behind the <span class="gradient-text">code.</span></h2>
+
+            <p class="section-intro">
+                My academic background, technical skills, and projects
+                reflect my ongoing journey into computer science and
+                cybersecurity.
+            </p>
+
+            <div class="project-card resume-card">
+                <div class="resume-header">
+                    <div>
+                        <p class="eyebrow">ACADEMIC RESUME</p>
+                        <h3>KUSHAAL.AKKIREDDY</h3>
+                        <p>
+                            B.Tech. Computer Science and Engineering —
+                            Cybersecurity
+                        </p>
+                        <p class="resume-contact">
+                            VIT Vellore, Tamil Nadu, India
+                        </p>
+                        <p class="resume-contact">
+                            kushaal.akkireddy2026@vitstudents.ac.in
+                        </p>
+                    </div>
+                    <span class="resume-status">STUDENT</span>
+                </div>
+
+                <hr>
+
+                <h4>Professional Profile</h4>
+                <p>
+                    First-year Computer Science and Engineering student
+                    specializing in Cybersecurity at VIT Vellore.
+                    Interested in defensive security, software development,
+                    and secure system design, with a focus on analytical
+                    thinking, debugging, and structured problem-solving.
+                </p>
+
+                <h4>Technical Skills</h4>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Debugging</span>
+                    <span>Threat Modeling</span>
+                    <span>Application Allowlisting</span>
+                </div>
+
+                <h4>Selected Projects</h4>
+
+                <p><strong>MindMetric — Quiz & Performance Analysis</strong></p>
+                <p>
+                    Built a working quiz application using Python, Flask,
+                    HTML, and CSS, featuring score calculation, answer
+                    review, and performance breakdowns.
+                </p>
+
+                <p><strong>ATM Jackpotting Defense System</strong></p>
+                <p>
+                    Contributing to an ongoing IoT cybersecurity project
+                    exploring threat modeling and layered defenses against
+                    unauthorized ATM cash-dispensing commands.
+                </p>
+
+                <h4>Education</h4>
+                <p>
+                    <strong>Vellore Institute of Technology</strong><br>
+                    B.Tech. Computer Science and Engineering — Cybersecurity
+                </p>
+
+                <h4>Relevant Coursework</h4>
+                <p>
+                    Problem Solving Using Python; Multivariable Calculus
+                    and Differential Equations; Engineering in Physics.
+                </p>
+
+                <div class="resume-actions">
+                    <a
+                        class="btn btn-primary"
+                        href="./Kushaal_Akkireddy_Resume.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View / Download PDF Resume ↗
+                    </a>
+                </div>
+
+                <p class="project-note">
+                    Aspiring cybersecurity professional — continuously
+                    learning, building, and improving.
+                </p>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <a href="#home" class="logo">
+            <span class="logo-symbol">&lt;/&gt;</span>
+            <span>CYBER<span class="accent">PORTFOLIO</span></span>
+        </a>
+        <p>Designed with purpose. Built with curiosity.</p>
+        <span class="footer-copyright">© 2026 · PERSONAL PORTFOLIO</span>
+    </footer>
+
+</body>
+</html>
