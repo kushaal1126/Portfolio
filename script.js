@@ -2,96 +2,93 @@
    CYBERPORTFOLIO — INTERACTIVE FEATURES
    ========================================= */
 
-// 1. Mobile navigation menu
+// Mobile navigation: open/close accessibly and close after navigation.
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
 
 if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("active");
-
+  const setMenuOpen = (isOpen) => {
+    navLinks.classList.toggle("active", isOpen);
     menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation menu" : "Open navigation menu"
-    );
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+  };
+
+  menuToggle.addEventListener("click", () => {
+    setMenuOpen(!navLinks.classList.contains("active"));
   });
 
-  // Close the menu after selecting a navigation link
   navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation menu");
-    });
+    link.addEventListener("click", () => setMenuOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuOpen(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+      setMenuOpen(false);
+    }
   });
 }
 
-// 2. Automatically update the footer year
+// Update the copyright year if the footer includes a year target.
 const yearElement = document.getElementById("currentYear");
+if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
-
-// 3. Reveal sections smoothly as they enter the screen
+// Gentle reveal animation. Content remains visible if motion is reduced
+// or IntersectionObserver is unavailable.
 const revealElements = document.querySelectorAll(
-  ".section, .project-card, .learning-card"
+  ".content-section, .project-card, .learning-card, .hero-content, .hero-visual"
 );
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0.12,
-    }
-  );
+if ("IntersectionObserver" in window && !prefersReducedMotion) {
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: "0px 0px -36px 0px" });
 
   revealElements.forEach((element) => {
-    element.classList.add("reveal");
+    element.classList.add("will-reveal");
     revealObserver.observe(element);
   });
 } else {
-  revealElements.forEach((element) => {
-    element.classList.add("visible");
-  });
+  revealElements.forEach((element) => element.classList.add("is-visible"));
 }
 
-// 4. Update the navbar appearance when scrolling
+// Navbar scroll state.
 const navbar = document.querySelector(".navbar");
-
-function updateNavbar() {
-  if (navbar) {
-    navbar.classList.toggle("scrolled", window.scrollY > 30);
-  }
-}
-
+const updateNavbar = () => {
+  if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 24);
+};
 window.addEventListener("scroll", updateNavbar, { passive: true });
 updateNavbar();
 
-// 5. Display a small message when the resume button is clicked
-const resumeButtons = document.querySelectorAll(
-  'a[href="#resume"]'
-);
+// Highlight the current section in the navigation as it enters view.
+const sectionLinks = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+const observedSections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
 
-resumeButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    const resumeSection = document.getElementById("resume");
-
-    if (resumeSection) {
-      resumeSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+if ("IntersectionObserver" in window && observedSections.length) {
+  const activeSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      sectionLinks.forEach((link) => {
+        const isActive = link.getAttribute("href") === `#${entry.target.id}`;
+        link.classList.toggle("active", isActive);
+        if (isActive) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
       });
-    }
-  });
-});
+    });
+  }, { rootMargin: "-25% 0px -60% 0px", threshold: 0 });
+
+  observedSections.forEach((section) => activeSectionObserver.observe(section));
+}
 
 console.log("CyberPortfolio initialized successfully.");
